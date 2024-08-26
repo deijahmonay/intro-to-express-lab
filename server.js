@@ -14,28 +14,15 @@ res.send(`Hello there ${name}! I hope you're having a great day`)})
 
 //! Hi Mark, can you give me feedback on number 1? Unsure if I did that right.
 
-app.get('/roll/:itemNumber', (req, res) => {
-    const itemNuber = req.params.itemNumber;
+app.get('/roll/:itemNumber', (req,res) => {
+    const itemNumber = req.params.itemNumber
 
-    if (isNAN(Number(itemNumber))){
-
+    if (isNaN(itemNumber) || itemNumber <- 0) {
+        res.status(400).send(`You must specify a number.`)
     } else {
-        res.send(`Item ${itemNumber}`)
+        res.send(`You rolled a ${itemNumber}`)
     }
-    // res.send(`<h1>Roll ${req.params.itemNumber}</h1>`)
-
-});
-
-app.get('something/:param', (req, res) => {
-    // validate the param
-    if ('conditional based param') 
-        {
-        // handle error
-    }
-    //respond to request
 })
-
-
 
 app.listen(3000, () => {
     console.log('Listening on port 3000')
