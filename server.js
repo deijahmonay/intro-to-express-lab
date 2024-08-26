@@ -15,8 +15,24 @@ res.send(`Hello there ${name}! I hope you're having a great day`)})
 //! Hi Mark, can you give me feedback on number 1? Unsure if I did that right.
 
 app.get('/roll/:itemNumber', (req, res) => {
-    res.send(`<h1>Roll ${req.params.itemNumber}</h1>`)
+    const itemNuber = req.params.itemNumber;
 
+    if (isNAN(Number(itemNumber))){
+
+    } else {
+        res.send(`Item ${itemNumber}`)
+    }
+    // res.send(`<h1>Roll ${req.params.itemNumber}</h1>`)
+
+});
+
+app.get('something/:param', (req, res) => {
+    // validate the param
+    if ('conditional based param') 
+        {
+        // handle error
+    }
+    //respond to request
 })
 
 
