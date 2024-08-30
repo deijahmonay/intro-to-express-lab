@@ -3,10 +3,20 @@ const app = express();
 
 const PORT = 3000;
 
+// 1. Be Polite, Greet the User
+// Task: Create a route that responds to URLs like /greetings/<username-parameter>.
 
+// Examples: Matches routes like /greetings/Christy or /greetings/Mathilda.
 
+// Response: Include the username from the URL in the response, such as “Hello there, Christy!” or “What a delight it is to see you once more, Mathilda.”
 
-
+app.get('/greetings', (req, res) => {
+    const name = req.query.name
+    
+    res.send(`Hello there ${name}! I hope you're having a great day`)})
+    
+//! Hi Mark, can you give me feedback on number 1? Unsure if I did that right.
+    
 
 
 
