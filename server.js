@@ -1,5 +1,5 @@
-const express = require('express');
-const app = express();
+const express = require('express')
+const app = express()
 
 const PORT = 3000;
 
@@ -28,7 +28,14 @@ app.get('/greetings', (req, res) => {
 // Functionality: If a valid number is provided, respond with a random whole number between 0 and the given number. For example, a request to /roll/16 might respond with “You rolled a 14.”
     
 app.get('/roll/:itemNumber', (req, res) => {
-    res.send()
+    const itemNumber = req.params.itemNumber
+
+    if(isNaN(itemNumber) || itemNumber <- 0) {
+        res.send(`You must specify a number`)
+    } else {
+
+    res.send(`You rolled at ${itemNumber}`)
+}
 })
 
 
@@ -86,6 +93,3 @@ app.listen(PORT, () => console.log(`Express is listening at port: ${PORT}`))
 
 
 
-// app.listen(3000, () => {
-//     console.log('Listening on port 3000')
-// })
