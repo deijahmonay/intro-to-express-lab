@@ -44,6 +44,23 @@ app.get('/roll/:itemNumber', (req, res) => {
 // Examples: Matches routes such as /collectibles/2 or /collectibles/0.
 
 
+const collectibles = [
+    { name: 'shiny ball', price: 5.95 },
+    { name: 'autographed picture of a dog', price: 10 },
+    { name: 'vintage 1970s yogurt SOLD AS-IS', price: 0.99 }
+  ];
+
+  app.get('/collectibles/:indexNumber', (req, res) => {
+    const index = parseInt(req.params.indexNumber)
+    const collectible = collectibles[index]
+    
+
+    if (index >= 0 && index < collectibles.length) {
+        res.send(`So you want the ${collectible.name}? For ${collectible.price}, it can be yours!`)
+    } else {
+        res.send('This item is not yet in stock. Check back soon!')
+    }
+})
 
 
 
