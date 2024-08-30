@@ -16,6 +16,16 @@ app.get('/greetings', (req, res) => {
     res.send(`Hello there ${name}! I hope you're having a great day`)})
     
 //! Hi Mark, can you give me feedback on number 1? Unsure if I did that right.
+
+
+// 2. Rolling the Dice
+// Task: Set up a route to handle URLs following the pattern /roll/<number-parameter>.
+
+// Examples: Matches routes like /roll/6 or /roll/20.
+
+// Validation: If the parameter is not a number, respond with “You must specify a number.” For instance, /roll/potato should trigger this response.
+
+// Functionality: If a valid number is provided, respond with a random whole number between 0 and the given number. For example, a request to /roll/16 might respond with “You rolled a 14.”
     
 
 
