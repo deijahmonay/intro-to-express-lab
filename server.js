@@ -75,7 +75,42 @@ const collectibles = [
 // type: Shows only shoes of the specified type.
 // No parameters: Responds with the full list of shoes.
 
+const shoes = [
+    { name: "Birkenstocks", price: 50, type: "sandal" },
+    { name: "Air Jordans", price: 500, type: "sneaker" },
+    { name: "Air Mahomeses", price: 501, type: "sneaker" },
+    { name: "Utility Boots", price: 20, type: "boot" },
+    { name: "Velcro Sandals", price: 15, type: "sandal" },
+    { name: "Jet Boots", price: 1000, type: "boot" },
+    { name: "Fifty-Inch Heels", price: 175, type: "heel" }
+];
 
+//  Create a route /shoes that filters the list of shoes based on query parameters.
+app.get('/shoes', (req, res) => {
+    const minPrice = parseInt(req.query.minprice);
+    const maxPrice = parseInt(req.query.maxprice);
+    const type = req.query.type;
+
+    let filteredShoes = shoes;
+
+    if (!isNaN(minPrice)) {
+        filteredShoes = filteredShoes.filter(shoe => shoe.price >= minPrice);
+    }
+
+    if (!isNaN(maxPrice)) {
+        filteredShoes = filteredShoes.filter(shoe => shoe.price <= maxPrice);
+    }
+
+    if (type) {
+        filteredShoes = filteredShoes.filter(shoe => shoe.type === type);
+    }
+
+    if (filteredShoes.length > 0) {
+        res.send(filteredShoes.map(shoe => `Name: ${shoe.name}, Price: ${shoe.price}, Type: ${shoe.type}`).join('\n'));
+    } else {
+        res.send('No shoes match the given criteria.\n');
+    }
+});
 
 
 
