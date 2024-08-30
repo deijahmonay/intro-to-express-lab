@@ -33,10 +33,15 @@ app.get('/roll/:itemNumber', (req, res) => {
     if(isNaN(itemNumber) || itemNumber <- 0) {
         res.send(`You must specify a number`)
     } else {
-
     res.send(`You rolled at ${itemNumber}`)
 }
 })
+
+
+// 3. I Want THAT One!
+// Task: Create a route for URLs like /collectibles/<index-parameter>.
+
+// Examples: Matches routes such as /collectibles/2 or /collectibles/0.
 
 
 
