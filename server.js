@@ -62,8 +62,18 @@ const collectibles = [
     }
 })
 
+// ! Could I also have feedback on number 3? I feel as if there is a another way to write/ solve this but I think my answer is correct. It renders on my browser
 
+// 4. Filter Shoes by Query Parameters
 
+// Task: Create a route /shoes that filters the list of shoes based on query parameters.
+
+// Query Parameters:
+
+// min-price: Excludes shoes below this price.
+// max-price: Excludes shoes above this price.
+// type: Shows only shoes of the specified type.
+// No parameters: Responds with the full list of shoes.
 
 
 
