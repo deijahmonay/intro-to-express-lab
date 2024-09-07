@@ -10,10 +10,10 @@ const PORT = 3000;
 
 // Response: Include the username from the URL in the response, such as “Hello there, Christy!” or “What a delight it is to see you once more, Mathilda.”
 
-app.get('/greetings', (req, res) => {
+app.get('/greetings/:name', (req, res) => {
     const name = req.query.name
     
-    res.send(`Hello there ${name}! I hope you're having a great day`)})
+    res.send(`Hello there ${req.params.name}! I hope you're having a great day`)})
     
 //! Hi Mark, can you give me feedback on number 1? Unsure if I did that right.
 
