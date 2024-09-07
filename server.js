@@ -28,12 +28,13 @@ app.get('/greetings/:name', (req, res) => {
 // Functionality: If a valid number is provided, respond with a random whole number between 0 and the given number. For example, a request to /roll/16 might respond with “You rolled a 14.”
     
 app.get('/roll/:itemNumber', (req, res) => {
-    const itemNumber = req.params.itemNumber
+    const itemNumber = parseInt(req.params.itemNumber)
 
     if(isNaN(itemNumber) || itemNumber <- 0) {
         res.send(`You must specify a number`)
     } else {
-    res.send(`You rolled at ${itemNumber}`)
+        const randomNumber = Math.floor(Math.random() * (itemNumber + 1))
+    res.send(`You rolled at ${randomNumber}`)
 }
 })
 
